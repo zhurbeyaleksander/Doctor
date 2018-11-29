@@ -33,29 +33,8 @@ func (m *Patient) Read(sur string) []Pat2 {
 	}
 	defer db.Close()
 
-	//rows := db.QueryRow("SELECT id, surname, name, midname, city, streer, home, flat, tel, age FROM patients where surname = $1 ", sur)
-	//var idType sql.NullInt64
-	//var id sql.NullInt64
-	//var surname sql.NullString
-	//var name sql.NullString
-	//var midname sql.NullString
-	//var city sql.NullString
-	//var streer sql.NullString
-	//var home sql.NullString
-	//var flat sql.NullString
-	//var tel sql.NullString
-	//var age sql.NullInt64
-
-	//err = rows.Scan(&id, &surname, &name, &midname, &city, &streer, &home, &flat, &tel, &age)
-	//if err != nil {
-	//	return nil, err
-	//}
-
-	//id = idType.Int64
-
-	//pati := &Pat2{Id: id.Int64, Surname: surname.String, Name: name.String, Midname: midname.String, City: city.String, Streer: streer.String, Home: home.String, Flat: flat.String, Tel: tel.String, Age: age.Int64}
-
-	//return pati, nil
+	
+	
 
 	rows, err := db.Query("select id, surname, name, midname,  city, streer, home, flat, tel, age from patients where surname = $1", sur)
 	if err != nil {
