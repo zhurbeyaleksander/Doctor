@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Marmelad" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<title>Система автоматизации оказания медицинской услуги</title>
+</head>
+<body>
+<div id="l"></div>
+
+<input type="submit" id="searchBtn" value="Поиск">
+
+
+<script>
+
+function controller() {
+  this.listenerBtn = function() {
+    var add = document.createElement('div');
+    add.innerHTML = "Вставили!";
+    document.getElementById('l').appendChild(add);
+  }
+}
+
+function run(){
+  cont.listenerBtn();
+}
+
+
+var cont = new controller();
+
+document.addEventListener('click', run);
+</script>
+</body>
+</html>
