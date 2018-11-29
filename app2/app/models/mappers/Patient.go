@@ -59,28 +59,7 @@ func (m *Patient) Read(sur string) []Pat2 {
 
 func (m *Patient) ReadAll(sur string) (*Pat2, error) {
 
-	connStr := "user=postgres password=123 dbname=testBD sslmode=disable"
-	db, err := sql.Open("postgres", connStr)
-	if err != nil {
-		return nil, err
-	}
-	defer db.Close()
-
-	rows := db.QueryRow("SELECT id, surname FROM patients where surname = $1 ", sur)
-	//var idType sql.NullInt64
-	var id sql.NullInt64
-	var surname sql.NullString
-
-	err = rows.Scan(&id, &surname)
-	if err != nil {
-		return nil, err
-	}
-
-	//id = idType.Int64
-
-	pati := &Pat2{Id: id.Int64, Surname: surname.String}
-
-	return pati, nil
+	
 }
 
 func (m *Patient) Update(*entitis.Patient) error {
